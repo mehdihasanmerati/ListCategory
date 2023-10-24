@@ -3,6 +3,7 @@ using ListCategory.Core.Domain.Products;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using ListCategory.Infrastructures.DAL.ApplicationUsers;
 
 namespace ListCategory.DataAccess.Common
 {
@@ -10,6 +11,7 @@ namespace ListCategory.DataAccess.Common
     {
         public DbSet<Category> Categories { get; set; }
         public DbSet<Product> Products { get; set; }
+        public DbSet<ApplicationUser> applicationUsers { get; set; }
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {
 

@@ -1,11 +1,14 @@
 ﻿using ListCategory.Core.Contracts.Categories;
 using ListCategory.Core.Domain.Categories;
 using ListCategory.DataAccess.Common;
+using ListCategory.EndPoints.WebUI.Models.SelectDetail;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace ListCategory.Areas.Admin.Controllers
 {
+    [Authorize(Roles = SD.Role_Admin)]
     [Area("Admin")]
     public class CategoryController : Controller
     {

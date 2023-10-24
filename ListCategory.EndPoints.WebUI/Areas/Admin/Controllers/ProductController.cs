@@ -4,7 +4,9 @@ using ListCategory.Core.Domain.Categories;
 using ListCategory.Core.Domain.Products;
 using ListCategory.DataAccess.Common;
 using ListCategory.DataAccess.Products;
+using ListCategory.EndPoints.WebUI.Models.SelectDetail;
 using ListCategory.Models.ProductVM;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -13,6 +15,7 @@ using Microsoft.EntityFrameworkCore;
 namespace AspTest.Areas.Admin.Controllers
 {
     [Area("Admin")]
+    [Authorize(Roles = SD.Role_Admin)]
     public class ProductController : Controller
     {
         private readonly IProductRepository ProductRepository;
